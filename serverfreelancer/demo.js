@@ -21,10 +21,9 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Create HTTP server
+
 const httpServer = createServer(app);
 
-// Create Socket.IO server
 const io = new Server(httpServer, {
   cors: {
     origin: 'http://localhost:3000',
@@ -33,20 +32,20 @@ const io = new Server(httpServer, {
   }
 });
 
-// Setup Socket.IO logic
+
 setupSocket(io);
-// after creating the io instance
+
 setSocketInstance(io);
-// Store connected users
+
 const connectedUsers = {};
 
 io.on("connection", (socket) => {
   console.log("⚡ User connected");
 
-  // Save user to connected users map
+  
   socket.on("register", (userId) => {
     connectedUsers[userId] = socket.id;
-    socket.join(userId); // Join private room
+    socket.join(userId); 
     console.log(`✅ User registered: ${userId}`);
   });
 
@@ -61,21 +60,19 @@ io.on("connection", (socket) => {
   });
 });
 
-// Middleware
+
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(express.json());
 
-// Serve static files (e.g. profile pics, certificates)
+
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Routes
 app.use('/api', authRoutes);
 app.use('/api/messages', routerMessage);
 
-// Test route
+
 app.get('/', (req, res) => res.send('✅ API Running'));
 
-// Start the server
 const PORT = process.env.PORT || 5001;
 httpServer.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);

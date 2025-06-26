@@ -140,7 +140,7 @@ router.put('/markAsRead/:roomId', async (req, res) => {
     await Message.updateMany(
       {
         roomId,
-        senderId: { $ne: userId }, // Only mark messages not sent by current user
+        senderId: { $ne: userId }, 
         isRead: false
       },
       {
