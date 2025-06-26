@@ -1,0 +1,4 @@
+.proposal-card:hover {
+  background-color: #f9f9ff;
+  transition: all 0.2s ease-in-out;
+}

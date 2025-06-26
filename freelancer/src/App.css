@@ -1,0 +1,206 @@
+nav {
+  background: rgb(56, 54, 54);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+body{
+  background: linear-gradient(to right, #667eea, #764ba2);
+}
+.onav, .navigation {
+  display: flex;
+  gap: 20px;
+}
+.nav-link:hover {
+  text-decoration: underline;
+  color: #ffc107 !important;
+}
+
+.navbar-brand:hover {
+  color: #ffe484 !important;
+  text-shadow: 1px 1px 2px black;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+a {
+  color: rgb(192, 12, 12);
+  text-decoration: none;
+}
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #343a40; /* dark background */
+  }
+
+  .navbar-collapse .nav-link {
+    color: white !important; /* override default Bootstrap styles */
+  }
+}
+
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffffee;
+  border-radius: 12px;
+}
+
+.login-form input::placeholder {
+  color: #999;
+}
+
+.signup-form {
+  width: 100%;
+  max-width: 450px;
+  background-color: #ffffffee;
+  border-radius: 12px;
+}
+
+.signup-form input::placeholder,
+.signup-form select {
+  color: #666;
+}
+.list-group-item {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+}
+.card {
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.post-project-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.card {
+  border-radius: 16px;
+  border: none;
+}
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: auto;
+}
+.project-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border-left: 6px solid #0d6efd;
+  transition: all 0.3s ease;
+  width: 80%; /* this sets it to 80% */
+  margin: 0 auto; /* this centers it */
+}
+
+
+.project-card:hover {
+  box-shadow: 0 8px 16px rgba(13, 110, 253, 0.2);
+  transform: translateY(-4px);
+}
+
+.project-card-header h4 {
+  margin-bottom: 0.5rem;
+  color: #0d6efd;
+}
+
+.project-card-body p {
+  margin-bottom: 0.5rem;
+}
+
+.project-card .description {
+  font-style: italic;
+  color: #333;
+}
+
+.project-cardt {
+  transition: transform 0.2s ease-in-out;
+  border-radius: 10px;
+}
+
+.project-cardt:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.desc-trim {
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/*-----*/
+.desc-trim {
+  max-height: 4.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.project-cardt {
+  transition: transform 0.2s ease;
+}
+
+.project-cardt:hover {
+  transform: translateY(-5px);
+}
+
+/*-------*/
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.chat-box {
+  height: 400px;
+  overflow-y: auto;
+  background-color: #f7f9fc;
+}
+
+.message-bubble {
+  max-width: 70%;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.own {
+  margin-left: auto;
+  background-color: #d1e7dd;
+  text-align: right;
+}
+
+.other {
+  margin-right: auto;
+  background-color: #e2e3e5;
+  text-align: left;
+}
+
+.sender-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.message-text {
+  font-size: 0.95rem;
+}

@@ -1,0 +1,41 @@
+ const handleSubmit = async e => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    setSuccess(false);
+
+    const token = localStorage.getItem('token');
+
+
+    try {
+    const res = await fetch('http://localhost:5001/api/postp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = res.json();
+    
+      if(res.ok){
+      setSuccess(true);
+      setForm({
+        title: '',
+        description: '',
+        skillsRequired: '',
+        minBudget: '',
+        maxBudget: '',
+        duration: '',
+        category: '',
+        projectType: 'fixed',
+      });
+      }else{
+          console.log(data);
+        alert(data.message || "Failed");
+      }
+
+    } catch (err) {
+      console.error('Post error:', err.response?.data || err.message);
+      setError('❌ Error posting project. Please check your form or try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
